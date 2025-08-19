@@ -1,0 +1,15 @@
+#ERRORS{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ERRORS a{
+  background-color: black !important;
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+  margin: 10px;
+  text-decoration: none
+}

@@ -1,0 +1,97 @@
+#footer {
+    background-color: #1C2F69; /* Background color for the footer */
+    padding: 30px 0;
+  }
+  
+  #footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  #footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #footer .col-lg-6, #footer .col-md-6, #footer .col-sm-12, #footer .col-12 {
+    padding: 15px;
+  }
+  
+  #footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+  
+  #footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #E5E510;
+  }
+  
+  #footer .footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  #footer .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    #footer .row {
+      flex-direction: column;
+    }
+  
+    #footer .col-lg-6, #footer .col-md-6 {
+      width: 100%;
+    }
+  
+    #footer h5 {
+      font-size: 1rem; /* Reduce size of heading for smaller screens */
+    }
+  
+    #footer p {
+      font-size: 0.9rem; /* Reduce size of text for smaller screens */
+    }
+  }
+  #e2ebrand {
+    color: #ffffff !important;
+    margin-top: 1rem !important;
+    animation: glowing 1.5s ease-in-out infinite; /* Infinite glowing effect */
+  }
+  
+  #e2ebrand:hover {
+    color: #f7ac22 !important; /* Change color on hover */
+    animation: glowing-hover 1.5s ease-in-out infinite; /* Glowing effect on hover */
+  }
+  
+  /* Glowing Animation (Mild white milky glow) */
+  @keyframes glowing {
+    0% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+  }
+  
+  /* Glowing Animation on Hover */
+  @keyframes glowing-hover {
+    0% {
+      text-shadow: 0 0 5px #f7ac22, 0 0 10px #f7ac22, 0 0 15px #f7ac22;
+    }
+    50% {
+      text-shadow: 0 0 10px #f7ac22, 0 0 20px #f7ac22, 0 0 30px #f7ac22;
+    }
+    100% {
+      text-shadow: 0 0 5px #f7ac22, 0 0 10px #f7ac22, 0 0 15px #f7ac22;
+    }
+  }
+  

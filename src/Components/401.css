@@ -1,0 +1,36 @@
+/* src/pages/Unauthorized401.css */
+.unauthorized-container {
+  text-align: center;
+  padding: 50px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffbe6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.unauthorized-container h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+  color: #ff9900;
+}
+
+.unauthorized-container p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.unauthorized-container a {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.unauthorized-container a:hover {
+  background-color: #0056b3;
+}

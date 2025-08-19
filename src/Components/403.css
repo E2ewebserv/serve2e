@@ -1,0 +1,36 @@
+/* src/pages/Forbidden403.css */
+.forbidden-container {
+  text-align: center;
+  padding: 50px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff5f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forbidden-container h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+  color: #ff4c4c;
+}
+
+.forbidden-container p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.forbidden-container a {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.forbidden-container a:hover {
+  background-color: #0056b3;
+}

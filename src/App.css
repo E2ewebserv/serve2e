@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+#FIXEDPHONECALL {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+#phone-call-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #08AB4F;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 30px;
+  text-decoration: none;
+  transform: rotate(0deg);  /* Ensures the icon is not rotated */
+  animation: float 2s ease-in-out infinite, glowing 1.5s linear infinite, ring 1.5s infinite; /* Adding animations */
+}
+
+#phone-call-button i {
+  color: white;
+  transform: rotate(90deg);  /* Ensures the icon is correctly oriented */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Glowing Effect Animation */
+/* @keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #1C2F69, 0 0 10px #1C2F69, 0 0 15px #1C2F69, 0 0 20px #1C2F69;
+  }
+  50% {
+    box-shadow: 0 0 10px #1C2F69, 0 0 20px #1C2F69, 0 0 30px #1C2F69, 0 0 40px #1C2F69;
+  }
+  100% {
+    box-shadow: 0 0 5px #1C2F69, 0 0 10px #1C2F69, 0 0 15px #1C2F69, 0 0 20px #1C2F69;
+  }
+} */
+
+/* Ringing Animation (Creates a vibrating effect) */
+@keyframes ring {
+  0% {
+    transform: scale(1);
+  }
+  12.5% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(1);
+  }
+  37.5% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  62.5% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  87.5% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Update the animation duration */
+#phone-call-button {
+  animation: float 2s ease-in-out infinite, glowing 1.5s linear infinite, ring 2s infinite; /* Increase the duration here */
+}
+@media screen and (max-width: 768px) {
+  #phone-call-button {
+    padding: 18px;
+    font-size: 30px;
+  }
+}
