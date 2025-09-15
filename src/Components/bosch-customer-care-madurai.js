@@ -210,7 +210,7 @@ export default function BOSCHCUSTOMERCAREMADURAI() {
               <section id="hero" style={{ backgroundImage: `url(${HOMEAPPLICANCES})` }}>
                   <div className="hero-content">
                      
-                    <h1>BEST BOSH CUSTOMER CARE MADURAI</h1>
+                    <h1>BOSH CUSTOMER CARE MADURAI</h1>
                     <h3>24*7 Bosch Customer Care Madurai</h3>
                     
                     <a href="tel:+919025312399" className="hero-btn">+919025312399</a>
