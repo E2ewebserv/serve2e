@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../Header&Footer/Navbar';
-import Footer from '../Header&Footer/Footer';
+import Footers from '../Header&Footer/Footers';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -12,7 +12,8 @@ import PHONECALLPNG from '../images/PHONECALLPNG.png';
 import EMAILPNG from '../images/EMAILPNG.png';
 import ACPNG from '../images/ACPNG.png';
 import WHATSAPPPNG from '../images/WHATSAPPPNG.png';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function ACSERVICECENTERTENKASI() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -100,7 +101,7 @@ export default function ACSERVICECENTERTENKASI() {
 
       <Navbar />
 
-      <section id="headline">
+      {/* <section id="headline">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -108,17 +109,40 @@ export default function ACSERVICECENTERTENKASI() {
             </div>
           </div>
         </div>
-      </section>
-
+      </section> */}
+<section className="highlight-strip">
+  <div className="scroll-container">
+    <div className="scroll-track">
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+</section>
       <section id="hero" style={{ backgroundImage: `url(${ACHERO})` }}>
         <div className="hero-content">
-          <h1>WE ARE READY TO HELP</h1>
+          <h1>AC SERVICE CENTER TENKASI</h1>
           <h3>24*7 Service Support</h3>
           <a href="tel:+919025312399" className="hero-btn">+91 90253 12399</a>
         </div>
       </section>
 
-      <section id="cchl">
+      <section id="cchl" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -128,7 +152,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="start">
+      <section id="start" data-aos="fade-left">
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
@@ -142,7 +166,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="CEE">
+      <section id="CEE" data-aos="fade-right">
         <div className='container'>
           <div className='row text-center'>
             <div className='col-md-4 col-12'>
@@ -153,7 +177,7 @@ export default function ACSERVICECENTERTENKASI() {
             <div className='col-md-4 col-12'>
               <h3>Email Us</h3>
               <img src={EMAILPNG} alt="Email Us" />
-              <a href="mailto:e2ewebservice@gmail.com">e2ewebservice@gmail.com</a>
+              <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a>
             </div>
             <div className='col-md-4 col-12'>
               <h3>Enquiry Us</h3>
@@ -164,7 +188,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="WRHY">
+      <section id="WRHY" data-aos="fade-left">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -174,11 +198,11 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="LIST">
+      <section id="LIST" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
-              <h2>Customer Care Helpline Support</h2>
+              <h2 data-aos="fade-left">Customer Care Helpline Support</h2>
               <ul>
                 <li><i className='fas fa-arrow-circle-right'></i> Book Your Complaints 24*7 Customer Care</li>
                 <li><i className='fas fa-arrow-circle-right'></i> Quick Service Within 2 Hours</li>
@@ -188,7 +212,7 @@ export default function ACSERVICECENTERTENKASI() {
                 <li><i className='fas fa-arrow-circle-right'></i> Trusted Certified Technicians</li>
               </ul>
 
-              <h2>Issues In AC</h2>
+              <h2 data-aos="fade-left">Issues In AC</h2>
               <ul>
                 <li><i className='fas fa-arrow-circle-right'></i> AC On-Off Problem</li>
                 <li><i className='fas fa-arrow-circle-right'></i> Noise in The AC</li>
@@ -199,7 +223,7 @@ export default function ACSERVICECENTERTENKASI() {
                 <li><i className='fas fa-arrow-circle-right'></i> AC Uninstall</li>
               </ul>
 
-              <h2>Types Of AC</h2>
+              <h2 data-aos="fade-left">Types Of AC</h2>
               <ul>
                 <li><i className='fas fa-arrow-circle-right'></i> Split AC Service</li>
                 <li><i className='fas fa-arrow-circle-right'></i> Window AC Service</li>
@@ -214,7 +238,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="WRHY">
+      <section id="WRHY" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -224,7 +248,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="WASHMANSIT">
+      <section id="WASHMANSIT" data-aos="fade-left">
         <div className='container'>
           <div className='row'>
             <div className='col-12 text-center'>
@@ -240,7 +264,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="STARS">
+      <section id="STARS" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-md-4 col-12 text-center'>
@@ -259,7 +283,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="WRHY">
+      <section id="WRHY" data-aos="fade-left">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -268,7 +292,7 @@ export default function ACSERVICECENTERTENKASI() {
           </div>
         </div>
       </section>
-      <section id="RATING">
+      <section id="RATING" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             {/* Example testimonial */}
@@ -330,7 +354,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="ours">
+      <section id="ours" data-aos="fade-left">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -344,7 +368,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="DESCWASH">
+      <section id="DESCWASH" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-md-6 col-12'>
@@ -363,13 +387,13 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="call-btn">
+      <section id="call-btn" data-aos="fade-left">
         <div className='container text-center'>
           <a href="tel:+919025312399"><button>Call +91 90253 12399</button></a>
         </div>
       </section>
 
-      <section id="WWO">
+      <section id="WWO" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -384,13 +408,13 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="call-btn">
+      <section id="call-btn" data-aos="fade-left">
         <div className='container text-center'>
           <a href="tel:+919025312399"><button>Call +91 90253 12399</button></a>
         </div>
       </section>
 
-      <section id='BDC'>
+      <section id='BDC' data-aos="fade-right">
         <nav aria-label="breadcrumb" className="breadcrumb-container">
           <ol className="breadcrumb">
             <li><Link to="/">Home</Link></li>
@@ -400,7 +424,7 @@ export default function ACSERVICECENTERTENKASI() {
         </nav>
       </section>
 
-      <section id='SDS'>
+      <section id='SDS' data-aos="fade-left">
         <div className="container">
           <h2 className="sds-title">AC Service Center Tenkasi – Complete Details</h2>
           <div className="sds-content">
@@ -410,7 +434,7 @@ export default function ACSERVICECENTERTENKASI() {
             <p><strong>Service Area:</strong> Tenkasi & Surrounding 20 km</p>
             <p><strong>Booking Mode:</strong> Online / Phone Call</p>
             <p><strong>Contact Number:</strong> <a href="tel:+919025312399">+91 90253 12399</a></p>
-            <p><strong>Email:</strong> <a href="mailto:e2ewebservice@gmail.com">e2ewebservice@gmail.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a></p>
             <p><strong>Website:</strong> <a href="https://servicee2e.in">https://servicee2e.in</a></p>
             <p><strong>Working Hours:</strong> 9 AM – 9 PM (All Days)</p>
             <p><strong>Home Visit:</strong> Yes, Doorstep Service Available</p>
@@ -418,7 +442,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id='faqs'>
+      <section id='faqs' data-aos="fade-right">
         <div className="container">
           <h2 className="faq-title">AC Service Center Tenkasi – FAQs</h2>
           <table className="faq-table">
@@ -472,7 +496,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id='UST'>
+      <section id='UST' data-aos="fade-left">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -495,7 +519,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="interl">
+      <section id="interl" data-aos="fade-right">
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
@@ -516,7 +540,7 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="FW">
+      <section id="FW" data-aos="fade-left">
         <div className="icon-container">
           <div className="icon facebook">
             <a
@@ -541,29 +565,29 @@ export default function ACSERVICECENTERTENKASI() {
         </div>
       </section>
 
-      <section id="TABOFCONTENT">
+      <section id="TABOFCONTENT" data-aos="fade-right">
         <div className="container">
           <h2>Table of Contents</h2>
           <ul id="TAB">
-            <li><a href="#headline">1. AC Service Customer Care</a></li>
-            <li><a href="#hero">2. Hero Section</a></li>
-            <li><a href="#cchl">3. Customer Care Helpline</a></li>
-            <li><a href="#CEE">4. Contact Us</a></li>
-            <li><a href="#WRHY">5. We Are Ready to Help You</a></li>
-            <li><a href="#LIST">6. Customer Care Helpline Support</a></li>
-            <li><a href="#WASHMANSIT">7. Intro Section</a></li>
-            <li><a href="#STARS">8. Customer Support Ratings</a></li>
-            <li><a href="#RATING">9. Customer Testimonials</a></li>
-            <li><a href="#ours">10. Our Mission</a></li>
-            <li><a href="#DESCWASH">11. AC Customer Support Service</a></li>
-            <li><a href="#WWO">12. What We Offer</a></li>
-            <li><a href="#interl">13. Related Services</a></li>
-            <li><a href="#FW">14. Follow Us</a></li>
+            {/* <li><a href="#headline">1. AC Service Customer Care</a></li> */}
+            <li><a href="#hero">1. Hero Section</a></li>
+            <li><a href="#cchl">2. Customer Care Helpline</a></li>
+            <li><a href="#CEE">3. Contact Us</a></li>
+            <li><a href="#WRHY">4. We Are Ready to Help You</a></li>
+            <li><a href="#LIST">5. Customer Care Helpline Support</a></li>
+            <li><a href="#WASHMANSIT">6. Intro Section</a></li>
+            <li><a href="#STARS">7. Customer Support Ratings</a></li>
+            <li><a href="#RATING">8. Customer Testimonials</a></li>
+            <li><a href="#ours">9. Our Mission</a></li>
+            <li><a href="#DESCWASH">10. AC Customer Support Service</a></li>
+            <li><a href="#WWO">11. What We Offer</a></li>
+            <li><a href="#interl">12. Related Services</a></li>
+            <li><a href="#FW">13. Follow Us</a></li>
           </ul>
         </div>
       </section>
 
-      <Footer />
+      <Footers />
     </>
   );
 }
