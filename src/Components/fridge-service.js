@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import Navbar from '../Header&Footer/Navbar';
 import Footers from '../Header&Footer/Footers';
-import {Link} from 'react-router-dom';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+// import {Link} from 'react-router-dom';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFacebookF, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import '../Components/fridge.css';
 import FRIDGEHERO from '../images/FRIDGEHERO.png'
 import FRIDESC from '../images/FRIDESC.webp'
 import FRIDGEMAN from '../images/FRIDGEMAN.webp'
-import PHONECALLPNG from '../images/PHONECALLPNG.png'
-import EMAILPNG from '../images/EMAILPNG.png'
-import WHATSAPPPNG from '../images/WHATSAPPPNG.png'
-import { Helmet } from "react-helmet";
-// import FRIDGESERVICE from './fridge-service'
+// import PHONECALLPNG from '../images/PHONECALLPNG.png'
+// import EMAILPNG from '../images/EMAILPNG.png'
+// import WHATSAPPPNG from '../images/WHATSAPPPNG.png'
+// import { Helmet } from "react-helmet";
+
+ import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -24,6 +26,9 @@ document.title = "Fridge Service";
 
 
      }, []);
+      useEffect(() => {
+         AOS.init({ duration: 1000, once: true });
+       }, []);
    
 
      return (
@@ -36,15 +41,6 @@ document.title = "Fridge Service";
                <Navbar />
              </div>
        
-       <section id="headline">
-             <div className='container'>
-               <div className='row'>
-                 <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
-                   <h2>Professional Fridge Repair & Service in Tamil Nadu</h2>
-                 </div>
-               </div>
-             </div>
-           </section>
 
 
          <section className="highlight-strip">
@@ -75,7 +71,7 @@ document.title = "Fridge Service";
        
              <section id="hero" style={{ backgroundImage: `url(${FRIDGEHERO})` }}>
                  <div className="hero-content">
-                   <h1>WE ARE READY TO HELP</h1>
+                   <h1>FRIDGE SERVICE</h1>
                     <h3>Fast And Reliable Service</h3>
                    
                    <a href="tel:+919790005712" className="hero-btn">+919790005712</a>
@@ -85,40 +81,34 @@ document.title = "Fridge Service";
    
    
    
-         <section id="start">
-     <div className="container">
-       <div className="row">
-         <div className="col-12 text-center">
-           <div className="line-container">
-             <div className="line left-line"></div>
-             <div className="star">&#9733;</div> {/* Star symbol */}
-             <div className="line right-line"></div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
+   <section id="start" data-aos="zoom-in">
+
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <div className="line-container">
+                <div className="line left-line"></div>
+                <div className="star twinkle">&#9733;</div>
+                <div className="line right-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
    
    
    
    
    
+  <section id="WRHY" data-aos="fade-right">
+
+        <div className="container">
+          <h2 className="reveal up">We Are Ready To Help You</h2>
+        </div>
+      </section>
    
    
-   <section id="WRHY">
-     <div className='container'>
-       <div className='row'>
-         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
-   
-         <h2>We Are Ready To Help You</h2>
-   
-         </div>
-   </div>
-   </div>
-   </section>
-   
-   
-   <section id="LIST">
+   <section id="LIST" data-aos="fade-left">
      <div className='container'>
        <div className='row'>
          <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -133,7 +123,7 @@ document.title = "Fridge Service";
           <li> <i class='fas fa-arrow-circle-right'></i>Trusted Professional Technicians</li>
            </ul>
    
-           <h2>Issues In Refrigerator</h2>
+           <h2 data-aos="fade-right">Issues In Refrigerator</h2>
            <ul>
              <li> <i class='fas fa-arrow-circle-right'></i>Refrigerator On-Off Problem</li>
              <li> <i class='fas fa-arrow-circle-right'></i>Noise in The Refrigerator</li>
@@ -144,7 +134,7 @@ document.title = "Fridge Service";
              <li> <i class='fas fa-arrow-circle-right'></i>Door Not Lock Problem</li>
            </ul>
    
-           <h2>Types Of Fridge Service</h2>
+           <h2 data-aos="fade-left">Types Of Fridge Service</h2>
            <ul>
              <li> <i class='fas fa-arrow-circle-right'></i>Small Fridge Service</li>
              <li> <i class='fas fa-arrow-circle-right'></i>Single Door Fridge Service</li>
@@ -158,8 +148,8 @@ document.title = "Fridge Service";
    </section>
    
    
-   <section id="WRHY">
-     <div className='container'>
+   <section id="WRHY"  data-aos="fade-right">
+     <div className='container' >
        <div className='row'>
          <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
    
@@ -169,12 +159,13 @@ document.title = "Fridge Service";
    </div>
    </div>
    </section>
-   <section id="WASHMANSIT">
+
+   <section id="WASHMANSIT" data-aos="fade-left" >
      <div className='container'>
        <div className='row'>
          <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
            <center>
-       <img src={FRIDGEMAN} alt="washing machine service" title="washing machine service"/>
+       <img src={FRIDGEMAN} alt="Fridge Service  " title="Fridge Service"/>
        </center>
        <p>We are a Fast and Reliable Fridge Service Center. We handle all types of Single Door, Double Door, and Side-by-Side Refrigerators with doorstep service across Tamil Nadu. Book your complaint for same-day service. We focus on quality service and use genuine spare parts to help maintain lasting performance and customer satisfaction.</p>
 
@@ -197,7 +188,7 @@ document.title = "Fridge Service";
    </div>
    </div>
    </section> */}
-   <section id="STARS">
+   <section id="STARS" data-aos="fade-right">
      <div className='container'>
        <div className='row'>
         
@@ -368,13 +359,13 @@ document.title = "Fridge Service";
    
    
    
-   <section id="ours">
+   <section id="ours" data-aos="fade-right">
      <div className='container'>
        <div className='row'>
          <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
    
-         <h5>Our Service</h5>
-         <p>In Service Center, our mission is to provide unparalleled service excellence through our expertise and commitment to customer satisfaction. We understand the importance of a well-functioning Fridge in your daily life and strive to minimize downtime with our swift and professional service.</p>
+         <h5 data-aos="fade-right">Our Service</h5>
+         <p data-aos="fade-left">In Service Center, our mission is to provide unparalleled service excellence through our expertise and commitment to customer satisfaction. We understand the importance of a well-functioning Fridge in your daily life and strive to minimize downtime with our swift and professional service.</p>
    
          </div>
    </div>
@@ -383,12 +374,12 @@ document.title = "Fridge Service";
    
    
    
-   <section id="DESCWASH">
+   <section id="DESCWASH" data-aos="fade-right">
      <div className='container'>
        <div className='row'>
          <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
    
-         <img src={FRIDESC} className="img-fluid" alt="washing machine service" title='washing machine service'/>
+         <img src={FRIDESC} className="img-fluid" alt="washing machine service" data-aos="fade-right" title='washing machine service'/>
    
          </div>
          <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -409,22 +400,11 @@ document.title = "Fridge Service";
    </section>
    
    
-   <section id="call-btn">
-             <div className='container'>
-               <div className='row'>
-                 <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
-                   <center>
-                   <a href='tel:+919790006791'><button>+919790006791</button></a>
-                   </center>
-                 </div>
-               </div>
-             </div>
-           </section>
    
    
    
    
-           <section id="WWO">
+           <section id="WWO" data-aos="fade-right">
              <div className='container'>
                <div className='row'>
                  <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -439,17 +419,6 @@ document.title = "Fridge Service";
              </div>
            </section>
    
-           <section id="call-btn">
-             <div className='container'>
-               <div className='row'>
-                 <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
-                   <center>
-                   <a href='tel:+919790006791'><button>+919790006791</button></a>
-                   </center>
-                 </div>
-               </div>
-             </div>
-           </section>
    
 
    
