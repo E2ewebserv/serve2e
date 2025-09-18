@@ -798,7 +798,7 @@ export default function HAIERWASHINGMACHINESERVICECENTERMADURAI() {
     
  
  
-    {/* <section id="area">
+<section id="area" data-aos="fade-right">
  <div className='container'>
      <div className='row'>
          <center>
@@ -1009,10 +1009,10 @@ export default function HAIERWASHINGMACHINESERVICECENTERMADURAI() {
  </div>
  
  
-    </section> */}
+    </section> 
     
     
-      <section id="TABOFCONTENT" data-aos="fade-right">
+      <section id="TABOFCONTENT" data-aos="fade-left">
       <div className='container'>
         <h2>Table of Contents</h2>
         <ul id="TAB">
