@@ -794,14 +794,14 @@ export default function HAIERWASHINGMACHINESERVICE() {
     
  
  
-    {/* <section id="area">
+    <section id="area" data-aos="fade-left">
  <div className='container'>
      <div className='row'>
          <center>
      <h3>Our Service Areas</h3>
      </center>
  <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
- <ul>
+ <ul data-aos="fade-right">
    <li>Washing machine service in Anna Nagar</li>
    <li>Washing machine service in K. K. Nagar</li>
    <li>Washing machine service in Simmakkal</li>
@@ -900,7 +900,7 @@ export default function HAIERWASHINGMACHINESERVICE() {
  </ul>
     </div>
     <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
-    <ul>
+    <ul data-aos="fade-right">
    <li>Washing machine repair in Anna Nagar</li>
    <li>Washing machine repair in K. K. Nagar</li>
    <li>Washing machine repair in Simmakkal</li>
@@ -1005,7 +1005,7 @@ export default function HAIERWASHINGMACHINESERVICE() {
  </div>
  
  
-    </section> */}
+    </section> 
     
     
       <section id="TABOFCONTENT" data-aos="fade-right">
