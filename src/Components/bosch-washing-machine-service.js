@@ -796,7 +796,7 @@ document.title = "Bosch Washing Machine Service | E2E Web Service | 9025312399";
     
  
  
-    {/* <section id="area">
+     <section id="area" data-aos="fade-left">
  <div className='container'>
      <div className='row'>
          <center>
@@ -1007,10 +1007,9 @@ document.title = "Bosch Washing Machine Service | E2E Web Service | 9025312399";
  </div>
  
  
-    </section> */}
+    </section>
     
-    
-      <section id="TABOFCONTENT" data-aos="fade-left">
+      <section id="TABOFCONTENT" data-aos="fade-right">
       <div className='container'>
         <h2>Table of Contents</h2>
         <ul id="TAB">
