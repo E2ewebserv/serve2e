@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../Header&Footer/Navbar';
-import Footer from '../Header&Footer/Footer';
+import Footers from '../Header&Footer/Footers';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -20,7 +20,8 @@ import  SAMSUNGDOUBESIDEFRIGH from'../images/SAMSUNGDOUBESIDEFRIGH.jpg';
 import  SAMSUNGMICROWAVEOVEN from '../images/SAMSUNGMICROWAVEOVEN.jpg';
 import  SAMSUNGAC from '../images/SAMSUNGAC.jpg';
 import   SAMSUNGTV from  '../images/SAMSUNGTV.jpg';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function SAMSUNGCUSTOMERCAREMADURAI() {
      useEffect(() => {
                       window.scrollTo(0, 0); // Scroll to the top of the page
@@ -173,7 +174,7 @@ export default function SAMSUNGCUSTOMERCAREMADURAI() {
                 <Navbar />
               </div>
         
-        <section id="headline">
+        {/* <section id="headline">
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -181,20 +182,41 @@ export default function SAMSUNGCUSTOMERCAREMADURAI() {
                   </div>
                 </div>
               </div>
-            </section> 
-
-
-
+            </section>  */}
+<section className="highlight-strip">
+  <div className="scroll-container">
+    <div className="scroll-track">
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+</section>
               <section id="hero" style={{ backgroundImage: `url(${HOMEAPPLICANCES})` }}>
                   <div className="hero-content">
-                    <h1>WE ARE READY TO HELP</h1>
+                    <h1>SAMSUNG CUSTOMER CARE MADURAI</h1>
                     <h3>24*7 Samsung Customer Care Support</h3>                    
                     <a href="tel:+919025312399" className="hero-btn">+919025312399</a>
                   </div>  
 
 
                 </section>
-                <section id="cchl">
+                <section id="cchl" data-aos="fade-right">
                  <div className='container'>
                  <div className='row'>
                  <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -206,7 +228,7 @@ export default function SAMSUNGCUSTOMERCAREMADURAI() {
     
     
     
-                   <section id="start">
+                   <section id="start" data-aos="fade-left">
                    <div className="container">
                    <div className="row">
                    <div className="col-12 text-center">
@@ -225,7 +247,7 @@ export default function SAMSUNGCUSTOMERCAREMADURAI() {
      
 
 
-                  <section id="CEE">
+                  <section id="CEE" data-aos="fade-right">
                   <div className='container'>
                   <div className='row'>
                   <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
@@ -236,7 +258,7 @@ export default function SAMSUNGCUSTOMERCAREMADURAI() {
                   <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
                   <h3>Email Us</h3>
                   <img src={EMAILPNG} id="EMAILPNG" />
-                  <a href="#">BOOK NOW</a>
+                  <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a>
                   </div>
                   <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
                   <h3>Enquiry Us</h3>
@@ -248,7 +270,7 @@ export default function SAMSUNGCUSTOMERCAREMADURAI() {
                </section>
             
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-left">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -278,7 +300,7 @@ For professional and affordable Samsung washing machine repair, trust Samsung Cu
 
 
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-right">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -308,7 +330,7 @@ For trusted and affordable Samsung washing machine repair, choose Samsung Custom
 
   
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-left">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -338,7 +360,7 @@ For professional and affordable Samsung refrigerator repair, trust Samsung Custo
 
 
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-right">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -366,11 +388,14 @@ For professional and affordable Samsung refrigerator repair, trust Samsung Custo
 
 
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-left">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
 <img src={SAMSUNGSIDEBYSIDEFRIGH} alt="Samsung Customer Care Madurai"  className='img-fluid'   width={400} height={400}  title="Samsung Customer Care Madurai "/>
+
+<h5> Samsung Fridge Service [SIDE BY SIDE DOOR]  </h5>
+</div>
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
 <p> If you are searching for Samsung Customer Care Madurai, we provide expert repair and service solutions for all Samsung refrigerators. Whether your Samsung fridge is not cooling properly, making unusual noises, leaking, or facing power issues, our certified technicians at Samsung Customer Care Madurai are here to assist you. We specialize in repairing all types of Samsung refrigerators, including single-door, double-door, side-by-side, and inverter models. At Samsung Customer Care Madurai, we use genuine Samsung spare parts to ensure high-quality service and long-lasting performance for your Samsung fridge.
 
@@ -378,14 +403,14 @@ Our Samsung fridge repair service in Madurai provides fast and reliable solution
 
 For professional and affordable Samsung refrigerator repair, trust Samsung Customer Care Madurai. We are committed to delivering top-notch service, ensuring customer satisfaction, and restoring your fridge’s optimal cooling performance.
 </p>
-</div>
+
 </div>
 </div>
 </div>
 </section>
 
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-right">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -407,7 +432,7 @@ For professional and affordable Samsung microwave oven repair, trust Samsung Cus
 
 
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-left">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -434,7 +459,7 @@ For professional and affordable Samsung microwave oven repair, trust Samsung Cus
 
     
 
-<section id="gallery">
+<section id="gallery" data-aos="fade-right">
 <div className="container">
 <div className="row">
 <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -458,7 +483,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
    
    
 
-         <section id="WRHY">
+         <section id="WRHY" data-aos="fade-left">
          <div className='container'>
          <div className='row'>
          <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -472,12 +497,12 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-    <section id="LIST">
+    <section id="LIST" data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
     
-            <h2> Samsung Customer Care Helpline Support</h2>
+            <h2 data-aos="fade-left"> Samsung Customer Care Helpline Support</h2>
             <ul>
            <li> <i class='fas fa-arrow-circle-right'></i>Book Your Complaints 24*7 Customer Care</li>
               <li> <i class='fas fa-arrow-circle-right'></i>Quick Service Within 2 Hours</li>
@@ -487,7 +512,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
               <li> <i class='fas fa-arrow-circle-right'></i>Trusted Certified Technicians</li>
             </ul>
     
-            <h2>Issues In Samsung Washing Machine</h2>
+            <h2 data-aos="fade-left">Issues In Samsung Washing Machine</h2>
             <ul>
               <li> <i class='fas fa-arrow-circle-right'></i>Washing Machine On-Off Problem</li>
               <li> <i class='fas fa-arrow-circle-right'></i>Noise in The Washing Machine</li>
@@ -498,7 +523,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
               <li> <i class='fas fa-arrow-circle-right'></i>Door Not Lock Problem</li>
             </ul>
     
-            <h2>Types Of Samsung Washing Machine Service</h2>
+            <h2 data-aos="fade-left">Types Of Samsung Washing Machine Service</h2>
             <ul>
               <li> <i class='fas fa-arrow-circle-right'></i>Top Load Washing Machine Service</li>
               <li> <i class='fas fa-arrow-circle-right'></i>Front Load Washing Machine Service</li>
@@ -509,7 +534,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-            <h2>Issues In Samsung Fridge Service</h2>
+            <h2 data-aos="fade-left">Issues In Samsung Fridge Service</h2>
             <ul>
             <li> <i class='fas fa-arrow-circle-right'></i>Fridge Not Cooling</li>  
 <li> <i class='fas fa-arrow-circle-right'></i>Excessive Ice Formation</li>  
@@ -521,7 +546,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
             </ul>
     
-            <h2>Types Of Samsung Fridge Service</h2>
+            <h2 data-aos="fade-left">Types Of Samsung Fridge Service</h2>
             <ul>
             <li> <i class='fas fa-arrow-circle-right'></i>Single Door Fridge Service</li>  
 <li> <i class='fas fa-arrow-circle-right'></i>Double Door Fridge Service</li>  
@@ -535,7 +560,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-            <h2>Issues In Samsung AC services</h2>
+            <h2 data-aos="fade-left">Issues In Samsung AC services</h2>
             <ul>
             <li> <i class='fas fa-arrow-circle-right'></i>AC Not Turning On</li>  
 <li> <i class='fas fa-arrow-circle-right'></i>No Cooling Issue</li>  
@@ -547,7 +572,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
             </ul>
     
-            <h2>Types Of Samsung AC </h2>
+            <h2 data-aos="fade-left">Types Of Samsung AC </h2>
             <ul>
             <li> <i class='fas fa-arrow-circle-right'></i>Split AC Service</li>  
 <li> <i class='fas fa-arrow-circle-right'></i>Window AC Service</li>  
@@ -556,7 +581,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
             </ul>
 
-            <h2>Issues In Samsung Microwave oven services</h2>
+            <h2 data-aos="fade-left">Issues In Samsung Microwave oven services</h2>
             <ul>
             <li> <i class='fas fa-arrow-circle-right'></i>Microwave Not Turning On</li>  
 <li> <i class='fas fa-arrow-circle-right'></i>Food Not Heating Properly</li>  
@@ -569,7 +594,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
                </ul>
     
-              <h2>Types Of Samsung  Microwave oven</h2>
+              <h2 data-aos="fade-left">Types Of Samsung  Microwave oven</h2>
               <ul>
               <li> <i class='fas fa-arrow-circle-right'></i>Convection Microwave Service</li>  
               <li> <i class='fas fa-arrow-circle-right'></i>Grill Microwave Service</li>  
@@ -582,7 +607,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
               </section>
 
     
-            <section id="WRHY">
+            <section id="WRHY" data-aos="fade-right">
             <div className='container'>
             <div className='row'>
             <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -596,7 +621,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-         <section id="WASHMANSIT">
+         <section id="WASHMANSIT" data-aos="fade-left">
          <div className='container'>
          <div className='row'>
          <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -623,7 +648,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     </div>
     </div>
     </section> */}
-                <section id="STARS">
+                <section id="STARS" data-aos="fade-right">
                 <div className='container'>
                 <div className='row'>
          
@@ -657,7 +682,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     
 
     
-               <section id="WRHY">
+               <section id="WRHY" data-aos="fade-left">
                <div className='container'>
                <div className='row'>
                <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -670,7 +695,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
                </section>
     
     
-               <section id="RATING">
+               <section id="RATING" data-aos="fade-right">
                <div className='container'>
               <div className='row'>
               <div className='col-lg-3 col-md-3 col-sm-12 col-12' id="borders">
@@ -783,7 +808,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     
     
     
-    <section id="ours">
+    <section id="ours" data-aos="fade-left">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -797,7 +822,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     </section>
     
     
-    <section id="DESCWASH">
+    <section id="DESCWASH" data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -825,7 +850,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     </section>
     
     
-    <section id="call-btn">
+    <section id="call-btn" data-aos="fade-left">
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -840,7 +865,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     
     
     
-            <section id="WWO">
+            <section id="WWO" data-aos="fade-right">
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -855,7 +880,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
               </div>
             </section>
     
-            <section id="call-btn">
+            <section id="call-btn" data-aos="fade-left">
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -871,12 +896,12 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-<section id='BDC'>
+<section id='BDC' data-aos="fade-right">
   <nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb">
      <li><Link to="/">Home</Link></li>
                          <li><Link to="/washing-machine-service">Washing machine service</Link></li>
-      <li class="active" aria-current="page">Samsung Washing Machine Service</li>
+      <li class="active" aria-current="page">Samsung Customer Care Madurai</li>
     </ol>
   </nav>
 </section>
@@ -884,7 +909,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-<section id='SDS'>
+<section id='SDS' data-aos="fade-left">
   <div className="container">
     <h2 className="sds-title">Samsung Washing Machine Service – Complete Details</h2>
     <div className="sds-content">
@@ -894,7 +919,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
       <p><strong>Service Area:</strong> Madurai & Surrounding 20 km</p>
       <p><strong>Booking Mode:</strong> Online / Phone Call</p>
       <p><strong>Contact Number:</strong> <a href="tel:9025312399">9025312399</a></p>
-      <p><strong>Email:</strong> <a href="mailto:e2ewebservice@gmail.com">e2ewebservice@gmail.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a></p>
       <p><strong>Website:</strong> <a href="https://servicee2e.in">https://servicee2e.in</a></p>
       <p><strong>Working Hours:</strong> 9 AM – 9 PM (All Days)</p>
       <p><strong>Home Visit:</strong> Yes, Doorstep Service Available</p>
@@ -909,7 +934,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-<section id='faqs'>
+<section id='faqs' data-aos="fade-right">
   <div className="container">
     <h2 className="faq-title">Samsung Washing Machine Service – FAQs</h2>
     <table className="faq-table">
@@ -966,7 +991,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-<section id='UST'>
+<section id='UST' data-aos="fade-right">
 <div className='container'>
 <div className='row'>
 <div className='col-lg-12 col-md-12 col-12 col-sm-12'>
@@ -1004,7 +1029,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-    <section id="interl">
+    <section id="interl" data-aos="fade-left">
     <div className='container'>
     <div className='row'>
       <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -1032,7 +1057,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     
     
     
-    <section id="FW">
+    <section id="FW" data-aos="fade-right">
         <div className="icon-container">
           <div className="icon facebook">
             <a
@@ -1059,7 +1084,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     
  
  
-     <section id="area">
+     <section id="area" data-aos="fade-left">
  <div className='container'>
      <div className='row'>
          <center>
@@ -1497,7 +1522,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
 
-    <section id="area">
+    <section id="area" data-aos="fade-right">
  <div className='container'>
      <div className='row'>
          <center>
@@ -1717,7 +1742,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
     
-    <section id="area">
+    <section id="area" data-aos="fade-right">
  <div className='container'>
      <div className='row'>
          <center>
@@ -1935,7 +1960,7 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
     </section> 
 
 
-    <section id="area">
+    <section id="area" data-aos="fade-left">
  <div className='container'>
      <div className='row'>
          <center>
@@ -2159,30 +2184,30 @@ For professional and affordable Samsung TV repair, trust Samsung Customer Care M
 
 
     
-      <section id="TABOFCONTENT">
+      <section id="TABOFCONTENT" data-aos="fade-right">
       <div className='container'>
         <h2>Table of Contents</h2>
         <ul id="TAB">
-          <li><a href="#headline">1. Washing Machine Service Customer Care</a></li>
-          <li><a href="#hero">2. Hero Section</a></li>
-          <li><a href="#cchl">3. Customer Care Helpline</a></li>
-          <li><a href="#CEE">4. Contact Us</a></li>
-          <li><a href="#WRHY">5. We Are Ready to Help You</a></li>
-          <li><a href="#LIST">6. Customer Care Helpline Support</a></li>
-          <li><a href="#WASHMANSIT">7. Why Choose Us?</a></li>
-          <li><a href="#STARS">8. Customer Support Ratings</a></li>
-          <li><a href="#RATING">9. Customer Testimonials</a></li>
-          <li><a href="#ours">10. Our Service</a></li>
-          <li><a href="#DESCWASH">11. Washing Machine Customer Support Service</a></li>
-          <li><a href="#WWO">12. What We Offer</a></li>
-          <li><a href="#interl">13. Related Services</a></li>
-          <li><a href="#FW">14. Follow Us</a></li>
+          {/* <li><a href="#headline">1. Washing Machine Service Customer Care</a></li> */}
+          <li><a href="#hero">1. Hero Section</a></li>
+          <li><a href="#cchl">2. Customer Care Helpline</a></li>
+          <li><a href="#CEE">3. Contact Us</a></li>
+          <li><a href="#WRHY">4. We Are Ready to Help You</a></li>
+          <li><a href="#LIST">5. Customer Care Helpline Support</a></li>
+          <li><a href="#WASHMANSIT">6. Why Choose Us?</a></li>
+          <li><a href="#STARS">7. Customer Support Ratings</a></li>
+          <li><a href="#RATING">8. Customer Testimonials</a></li>
+          <li><a href="#ours">9. Our Service</a></li>
+          <li><a href="#DESCWASH">10. Washing Machine Customer Support Service</a></li>
+          <li><a href="#WWO">11. What We Offer</a></li>
+          <li><a href="#interl">12. Related Services</a></li>
+          <li><a href="#FW">13. Follow Us</a></li>
         </ul>
       </div>
     </section>
     
     
-    <div><Footer/></div>
+    <div><Footers/></div>
     </>          
     
             
