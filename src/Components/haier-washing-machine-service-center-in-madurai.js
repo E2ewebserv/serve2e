@@ -808,7 +808,7 @@ import 'aos/dist/aos.css';
     
  
  
-    {/* <section id="area">
+    <section id="area" data-aos="fade-left">
  <div className='container'>
      <div className='row'>
          <center>
@@ -1019,8 +1019,7 @@ import 'aos/dist/aos.css';
  </div>
  
  
-    </section> */}
-    
+    </section> 
     
       <section id="TABOFCONTENT" data-aos="fade-right">
       <div className='container'>
