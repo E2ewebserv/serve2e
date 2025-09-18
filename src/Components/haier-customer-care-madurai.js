@@ -2344,7 +2344,7 @@ For professional and affordable Haier AC repair, trust Haier Customer Care Madur
     
  
  
-    {/* <section id="area">
+   <section id="area" data-aos="fade-right">
  <div className='container'>
      <div className='row'>
          <center>
@@ -2555,10 +2555,9 @@ For professional and affordable Haier AC repair, trust Haier Customer Care Madur
  </div>
  
  
-    </section> */}
+    </section>
     
-    
-      <section id="TABOFCONTENT" data-aos="fade-right">
+      <section id="TABOFCONTENT" data-aos="fade-left">
       <div className='container'>
         <h2>Table of Contents</h2>
         <ul id="TAB">
