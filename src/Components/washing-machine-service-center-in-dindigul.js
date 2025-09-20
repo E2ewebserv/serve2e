@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import Navbar from '../Header&Footer/Navbar';
-import Footer from '../Header&Footer/Footer';
+import Footers from '../Header&Footer/Footers';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -10,13 +10,11 @@ import WASHERHERO from '../images/WASHERHERO.jpg'
 import PHONECALLPNG from '../images/PHONECALLPNG.png'
 import EMAILPNG from '../images/EMAILPNG.png'
 import WHATSAPPPNG from '../images/WHATSAPPPNG.png'
-
 import WASHSIT from '../images/WASHSIT.jpg'
 import WASHDESC from '../images/WASHDESC.webp'
 import { Helmet } from "react-helmet";
-
-
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
 
   
@@ -171,7 +169,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                               <Navbar />
                             </div>
                       
-                      <section id="headline">
+                      {/* <section id="headline">
                             <div className='container'>
                               <div className='row'>
                                 <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -179,19 +177,42 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                                 </div>
                               </div>
                             </div>
-                          </section>
-                      
+                          </section> */}
+                      <section className="highlight-strip">
+  <div className="scroll-container">
+    <div className="scroll-track">
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+</section>
                             <section id="hero" style={{ backgroundImage: `url(${WASHERHERO})` }}>
                                 <div className="hero-content">
                                    
-                                  <h1>WE ARE READY TO HELP</h1>
+                                  <h1>WASHING MACHINE SERVICE CENTER IN DINDIGUL</h1>
                                   <h3>24*7 Washing Machine Service Support</h3>
                                   
                                   <a href="tel:+919025312399" className="hero-btn">+919025312399</a>
                                 </div>
                               </section>
                       
-                      <section id="cchl">
+                      <section id="cchl" data-aos="fade-right">
                         <div className='container'>
                   <div className='row'>
                   <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -207,7 +228,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                        <section id="start">
+                        <section id="start" data-aos="fade-left">
                     <div className="container">
                       <div className="row">
                         <div className="col-12 text-center">
@@ -221,7 +242,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                     </div>
                   </section>
                   
-                  <section id="CEE">
+                  <section id="CEE" data-aos="fade-right">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
@@ -232,7 +253,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                         <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
                           <h3>Email Us</h3>
                           <img src={EMAILPNG} id="EMAILPNG" />
-                          <a href="#">BOOK NOW</a>
+                         <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a>
                         </div>
                         <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
                           <h3>Enquiry Us</h3>
@@ -248,7 +269,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                  <section id="WRHY">
+                  <section id="WRHY" data-aos="fade-left">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -261,12 +282,12 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </section>
                   
                   
-                  <section id="LIST">
+                  <section id="LIST" data-aos="fade-right">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
                   
-                          <h2>  Washing Machine Customer Care Helpline Support</h2>
+                          <h2 data-aos="fade-left">  Washing Machine Customer Care Helpline Support</h2>
                           <ul>
                          <li> <i class='fas fa-arrow-circle-right'></i>Book Your Complaints 24*7 Customer Care</li>
                             <li> <i class='fas fa-arrow-circle-right'></i>Quick Service Within 2 Hours</li>
@@ -276,7 +297,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                             <li> <i class='fas fa-arrow-circle-right'></i>Trusted Certified Technicians</li>
                           </ul>
                   
-                          <h2>Issues In Washing Machine Service </h2>
+                          <h2 data-aos="fade-left">Issues In Washing Machine Service </h2>
                           <ul>
                             <li> <i class='fas fa-arrow-circle-right'></i>Washing Machine On-Off Problem</li>
                             <li> <i class='fas fa-arrow-circle-right'></i>Noise in The Washing Machine</li>
@@ -287,7 +308,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                             <li> <i class='fas fa-arrow-circle-right'></i>Door Not Lock Problem</li>
                           </ul>
                   
-                          <h2>Types Of Washing Machine Service</h2>
+                          <h2 data-aos="fade-left">Types Of Washing Machine Service</h2>
                           <ul>
                             <li> <i class='fas fa-arrow-circle-right'></i>Top Load Washing Machine Service</li>
                             <li> <i class='fas fa-arrow-circle-right'></i>Front Load Washing Machine Service</li>
@@ -300,7 +321,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </section>
                   
                   
-                  <section id="WRHY">
+                  <section id="WRHY" data-aos="fade-right">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -311,7 +332,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </div>
                   </div>
                   </section>
-                  <section id="WASHMANSIT">
+                  <section id="WASHMANSIT" data-aos="fade-left">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -338,7 +359,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </div>
                   </div>
                   </section> */}
-                  <section id="STARS">
+                  <section id="STARS" data-aos="fade-right">
                     <div className='container'>
                       <div className='row'>
                        
@@ -377,7 +398,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                  <section id="WRHY">
+                  <section id="WRHY" data-aos="fade-left">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -390,7 +411,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </section>
                   
                   
-                  <section id="RATING">
+                  <section id="RATING" data-aos="fade-right">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-3 col-md-3 col-sm-12 col-12' id="borders">
@@ -509,7 +530,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                  <section id="ours">
+                  <section id="ours" data-aos="fade-left">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -524,7 +545,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                  <section id="DESCWASH">
+                  <section id="DESCWASH" data-aos="fade-right">
                     <div className='container'>
                       <div className='row'>
                         <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -552,7 +573,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </section>
                   
                   
-                  <section id="call-btn">
+                  <section id="call-btn" data-aos="fade-left">
                             <div className='container'>
                               <div className='row'>
                                 <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -567,7 +588,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                          <section id="WWO">
+                          <section id="WWO" data-aos="fade-right">
                             <div className='container'>
                               <div className='row'>
                                 <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -582,7 +603,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                             </div>
                           </section>
                   
-                          <section id="call-btn">
+                          <section id="call-btn" data-aos="fade-left">
                             <div className='container'>
                               <div className='row'>
                                 <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -597,7 +618,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
 
 
 
-<section id='BDC'>
+<section id='BDC' data-aos="fade-right">
   <nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb">
  <li><Link to="/">Home</Link></li>
@@ -610,7 +631,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
 
 
 
-<section id='SDS'>
+<section id='SDS' data-aos="fade-left">
   <div className="container">
     <h2 className="sds-title"> Washing Machine Service – Complete Details</h2>
     <div className="sds-content">
@@ -620,7 +641,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
       <p><strong>Service Area:</strong> Madurai & Surrounding 20 km</p>
       <p><strong>Booking Mode:</strong> Online / Phone Call</p>
       <p><strong>Contact Number:</strong> <a href="tel:9025312399">9025312399</a></p>
-      <p><strong>Email:</strong> <a href="mailto:e2ewebservice@gmail.com">e2ewebservice@gmail.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a></p>
       <p><strong>Website:</strong> <a href="https://servicee2e.in">https://servicee2e.in</a></p>
       <p><strong>Working Hours:</strong> 9 AM – 9 PM (All Days)</p>
       <p><strong>Home Visit:</strong> Yes, Doorstep Service Available</p>
@@ -635,7 +656,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
 
 
 
-<section id='faqs'>
+<section id='faqs' data-aos="fade-right">
   <div className="container">
     <h2 className="faq-title"> Washing Machine Service – FAQs</h2>
     <table className="faq-table">
@@ -694,7 +715,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
 
 
 
-<section id='UST'>
+<section id='UST' data-aos="fade-left">
 <div className='container'>
 <div className='row'>
 <div className='col-lg-12 col-md-12 col-12 col-sm-12'>
@@ -731,7 +752,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
 
 
                   
-                  <section id="interl">
+                  <section id="interl" data-aos="fade-right">
                   <div className='container'>
                   <div className='row'>
                     <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -759,7 +780,7 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   
                   
                   
-                  <section id="FW">
+                  <section id="FW" data-aos="fade-left">
                       <div className="icon-container">
                         <div className="icon facebook">
                           <a
@@ -1000,30 +1021,30 @@ export default function WASHINGMACHINESERVICECENTERINDINDIGUL() {
                   </section> */}
                   
                   
-                    <section id="TABOFCONTENT">
+                    <section id="TABOFCONTENT" data-aos="fade-left">
                     <div className='container'>
                       <h2>Table of Contents</h2>
                       <ul id="TAB">
-                        <li><a href="#headline">1. Washing Machine Service Customer Care</a></li>
-                        <li><a href="#hero">2. Hero Section</a></li>
-                        <li><a href="#cchl">3. Customer Care Helpline</a></li>
-                        <li><a href="#CEE">4. Contact Us</a></li>
-                        <li><a href="#WRHY">5. We Are Ready to Help You</a></li>
-                        <li><a href="#LIST">6. Customer Care Helpline Support</a></li>
-                        <li><a href="#WASHMANSIT">7. Why Choose Us?</a></li>
-                        <li><a href="#STARS">8. Customer Support Ratings</a></li>
-                        <li><a href="#RATING">9. Customer Testimonials</a></li>
-                        <li><a href="#ours">10. Our Service</a></li>
-                        <li><a href="#DESCWASH">11. Washing Machine Customer Support Service</a></li>
-                        <li><a href="#WWO">12. What We Offer</a></li>
-                        <li><a href="#interl">13. Related Services</a></li>
-                        <li><a href="#FW">14. Follow Us</a></li>
+                        {/* <li><a href="#headline">1. Washing Machine Service Customer Care</a></li> */}
+                        <li><a href="#hero">1. Hero Section</a></li>
+                        <li><a href="#cchl">2. Customer Care Helpline</a></li>
+                        <li><a href="#CEE">3. Contact Us</a></li>
+                        <li><a href="#WRHY">4. We Are Ready to Help You</a></li>
+                        <li><a href="#LIST">5. Customer Care Helpline Support</a></li>
+                        <li><a href="#WASHMANSIT">6. Why Choose Us?</a></li>
+                        <li><a href="#STARS">7. Customer Support Ratings</a></li>
+                        <li><a href="#RATING">8. Customer Testimonials</a></li>
+                        <li><a href="#ours">9. Our Service</a></li>
+                        <li><a href="#DESCWASH">10. Washing Machine Customer Support Service</a></li>
+                        <li><a href="#WWO">11. What We Offer</a></li>
+                        <li><a href="#interl">12. Related Services</a></li>
+                        <li><a href="#FW">13. Follow Us</a></li>
                       </ul>
                     </div>
                   </section>
                   
                   
-                  <div><Footer/></div>
+                  <div><Footers/></div>
                   
                            </>
 
