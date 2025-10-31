@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState} from 'react';
 import Navbar from '../Header&Footer/Navbar';
-import Footer from '../Header&Footer/Footer';
+import Footers from '../Header&Footer/Footers';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -14,74 +14,88 @@ import WASHDESC from '../images/WASHDESC.webp'
 import { Helmet } from "react-helmet";
 
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function LGWASHINGMACHINESERVICE() {
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page
-             document.title = "LG Washing Machine Service | E2E Web Service | 9025312399";
+             document.title = "LG Washing Machine Service | SERV E2E | 7770005768";
 
   }, []);
 
 
-
-  const aggregateRatingSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Home Appliance Service - LG Washing Machine Service",
-    "url": "https://servicee2e.in/lg-washing-machine-service",
-    "telephone": "+919025312399",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Madurai",
-      "addressRegion": "Tamil Nadu",
-      "postalCode": "625001",
-      "addressCountry": "IN"
-    },
-    "areaServed": {
-      "@type": "Place",
-      "name": "Madurai"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "1500"
-    }
-  };
-
-
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "lg Washing Machine Repair and Maintenance",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "E2E Web Service",
-      "image": "https://servicee2e.in/logo.png",
-      "telephone": "9025312399",
-      "email": "e2ewebservice@gmail.com",
-      "url": "https://servicee2e.in",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Madurai",
-        "addressRegion": "Tamil Nadu",
-        "postalCode": "625001",
-        "addressCountry": "IN"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Madurai"
-      }
-    },
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceLocation": {
-        "@type": "Place",
-        "name": "Madurai"
-      },
-      "availableLanguage": ["English", "Tamil"]
-    }
-
-  };
+ 
+    const [formData, setFormData] = useState({
+         name: "",
+         phone: "",
+         
+         location: "",
+         appliance: "",
+         issue: "",
+       });
+     
+       const [loading, setLoading] = useState(false);
+     
+       const handleChange = (e) => {
+         const { name, value } = e.target;
+         if (name === "phone") {
+           const v = value.replace(/\D/g, "").slice(0, 10);
+           setFormData((p) => ({ ...p, phone: v }));
+         } else {
+           setFormData((p) => ({ ...p, [name]: value }));
+         }
+       };
+     
+       const handleSubmit = async (e) => {
+         e.preventDefault();
+         const payload = {
+           ...formData,
+           name: formData.name.trim(),
+           phone: formData.phone.trim(),
+           location: formData.location.trim(),
+           issue: `  ${formData.issue.value}
+         
+         - this offline calls coming from servicee2e.in 
+         `, 
+           toMail: "expresshelplinecare@gmail.com",
+         };
+     
+         if (!payload.name || !payload.phone || !payload.location) {
+           alert("Please fill all required fields.");
+           return;
+         }
+         if (!/^[6-9]\d{9}$/.test(payload.phone)) {
+           alert("Enter a valid 10-digit Indian mobile number.");
+           return;
+         }
+         // if (payload.email && !/^\S+@\S+\.\S+$/.test(payload.email)) {
+         //   alert("Enter a valid email address.");
+         //   return;
+         // }
+     
+         setLoading(true);
+         try {
+           const res = await fetch("https://form.e2ecrm.in/api/sendmail", {
+             method: "POST",
+             headers: { "Content-Type": "application/json" },
+             body: JSON.stringify(payload),
+           });
+           const data = await res.json().catch(() => ({}));
+           if (res.ok) {
+             alert(data?.message || "Booking submitted successfully!");
+             setFormData({ name: "", phone: "",  location: "", appliance: "", issue: "" });
+           } else {
+             alert(data?.message || "Something went wrong. Please try again.");
+           }
+         } catch (err) {
+           console.error(err);
+           alert("Failed to submit booking.");
+         } finally {
+           setLoading(false);
+         }
+       };        
+   
+ 
 
 
 
@@ -89,86 +103,102 @@ export default function LGWASHINGMACHINESERVICE() {
 
   return (
     <>
-
-     
-                   
-                     
-                     
-    <Helmet>
-      <title> Best LG Washing Machine Service 9025312399</title>
-      <meta 
-        name="description" 
-        content="Best LG Washing Machine Service? Call +91 9025312399 for expert and reliable LG washing machine repair services."
-      />
-      <meta 
-        name="robots" 
-        content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" 
-      />
-      <link 
-        rel="canonical" 
-        href="https://servicee2e.in/lg-washing-machine-service" 
-      />
     
-      
-      <meta 
-        property="og:locale" 
-        content="en_US" 
-      />
-      <meta 
-        property="og:type" 
-        content="website" 
-      />
-      <meta 
-        property="og:title" 
-        content="Best LG Washing Machine Service 9025312399" 
-      />
-      <meta 
-        property="og:description" 
-        content="Expert washing machine repair services near you. Reliable technicians for all washing machine brands." 
-      />
-      <meta 
-        property="og:url" 
-        content="https://servicee2e.in/lg-washing-machine-service" 
-      />
-      <meta 
-        property="og:site_name" 
-        content="Home Appliance Service" 
-      />
-      <meta 
-        property="og:image" 
-        content="https://servicee2e.in/static/media/WASHDESC.759c14c2789b5c3e4dca.webp" 
-      />
-      <meta 
-        property="og:image:secure_url" 
-        content="https://servicee2e.in/static/media/WASHSIT.3ba37aabeab803710e8c.jpg" 
-      />
-      <meta 
-        property="og:image:width" 
-        content="1280" 
-      />
-      <meta 
-        property="og:image:height" 
-        content="720" 
-      />
+<Helmet>
+  <title>Best LG Washing Machine Service 7770005768</title>
 
-{/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(aggregateRatingSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
+  <meta 
+    name="description" 
+    content="Best LG Washing Machine Service? Call +91 7770005768 for expert and reliable LG washing machine repair services." 
+  />
+  <meta 
+    name="robots" 
+    content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" 
+  />
+  <link 
+    rel="canonical" 
+    href="https://servicee2e.in/lg-washing-machine-service" 
+  />
 
+  {/* Open Graph Tags */}
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Best LG Washing Machine Service 7770005768" />
+  <meta property="og:description" content="Expert washing machine repair services near you. Reliable technicians for all washing machine brands." />
+  <meta property="og:url" content="https://servicee2e.in/lg-washing-machine-service" />
+  <meta property="og:site_name" content="Home Appliance Service" />
+  <meta property="og:image" content="https://servicee2e.in/static/media/WASHDESC.759c14c2789b5c3e4dca.webp" />
+  <meta property="og:image:secure_url" content="https://servicee2e.in/static/media/WASHSIT.3ba37aabeab803710e8c.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
 
-    
-    </Helmet>
-    
-    
+  {/* Structured Data - Product with Star Rating */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "LG Washing Machine Service",
+      "image": "https://servicee2e.in/static/media/WASHDESC.759c14c2789b5c3e4dca.webp",
+      "description": "Expert LG washing machine repair services near you. Reliable technicians for all LG washing machine brands.",
+      "brand": {
+        "@type": "Brand",
+        "name": "LG"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1364",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    })}
+  </script>
+{/* Structured Data - LocalBusiness */}
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SERV E2E LG Washing Machine Service",
+    "image": "https://servicee2e.in/static/media/WASHDESC.759c14c2789b5c3e4dca.webp",
+    "@id": "https://servicee2e.in/lg-washing-machine-service",
+    "url": "https://servicee2e.in/lg-washing-machine-service",
+    "telephone": "+917770005768",
+    "priceRange": "₹300 - ₹1500",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Madurai",
+      "addressLocality": "Madurai",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "625016",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 9.9252,
+      "longitude": 78.1198
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61574399374275",
+      "https://www.instagram.com/serv_e2e/"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1364",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  })}
+</script>
+
+</Helmet>
+
         <div>
                 <Navbar />
               </div>
         
-        <section id="headline">
+        {/* <section id="headline">
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -176,19 +206,98 @@ export default function LGWASHINGMACHINESERVICE() {
                   </div>
                 </div>
               </div>
-            </section>
+            </section> */}
+                                  <section className="highlight-strip">
+  <div className="scroll-container">
+    <div className="scroll-track">
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="scroll-content">
+        🚚 Free Visit Within 5 KM &nbsp;&nbsp;&nbsp;
+        🛠️ Up to 1 Year Spare Warranty &nbsp;&nbsp;&nbsp;
+        🧰 Transparent Spare Parts Pricing &nbsp;&nbsp;&nbsp;
+        🔁 30 Days Money Back If Not Satisfied * &nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+</section>
+           
+
         
               <section id="hero" style={{ backgroundImage: `url(${WASHERHERO})` }}>
-                  <div className="hero-content">
-                     
-                    <h1>WE ARE READY TO HELP</h1>
-                    <h3>24*7 LG Service Support</h3>
-                    
-                    <a href="tel:+919025312399" className="hero-btn">+919025312399</a>
-                  </div>
+                      <div className="hero-content reveal up">
+    {/* 🔹 Hero Text */}
+    <div className="hero-text animate__animated animate__fadeInLeft">
+      <h1 className="shine">LG Washing Machine Service Near me </h1>
+      <h3 className="reveal up delay-1">Fast And Reliable Service</h3>
+      <a
+        href="tel:+917770005768"
+        className="hero-btn reveal up delay-2"
+      >
+        777 000 5768
+      </a>
+    </div>
+
+    {/* 🔹 Form */}
+    <div className="form-container animate__animated animate__fadeInRight">
+      <form className="form-card" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email (optional)"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="location"
+          placeholder="Your Address"
+          value={formData.location}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="issue"
+          rows="3"
+          placeholder="Describe the Issue"
+          value={formData.issue}
+          onChange={handleChange}
+        ></textarea>
+        <button type="submit" className="btn-glow" disabled={loading}>
+          {loading ? "Submitting..." : "📞 Submit"}
+        </button>
+      </form>
+    </div>
+  </div>
                 </section>
         
-        <section id="cchl">
+        <section id="cchl"  data-aos="fade-right">
           <div className='container'>
     <div className='row'>
     <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -206,7 +315,7 @@ export default function LGWASHINGMACHINESERVICE() {
     
 
     
-          <section id="start">
+          <section id="start"  data-aos="fade-left">
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
@@ -220,23 +329,23 @@ export default function LGWASHINGMACHINESERVICE() {
       </div>
     </section>
     
-    <section id="CEE">
+    <section id="CEE"  data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
             <h3>Call Us</h3>
             <img src={PHONECALLPNG} id="PHONECALLPNG" />
-            <a href="tel:+919025312399">+91 9025312399</a>
+            <a href="tel:+917770005768">+91 7770005768</a>
           </div>
           <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
             <h3>Email Us</h3>
             <img src={EMAILPNG} id="EMAILPNG" />
-            <a href="#">BOOK NOW</a>
+             <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a>
           </div>
           <div className='col-lg-4 col-md-4 col-sm-12 col-12'>
             <h3>Enquiry Us</h3>
             <img src={WHATSAPPPNG} id="WHATSAPPPNG" />
-            <a href="https://wa.me/919025312399">Whats App</a>
+            <a href="https://wa.me/917770005768">Whats App</a>
           </div>
         </div>
       </div>
@@ -247,7 +356,7 @@ export default function LGWASHINGMACHINESERVICE() {
     
     
     
-    <section id="WRHY">
+    <section id="WRHY"  data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -260,12 +369,12 @@ export default function LGWASHINGMACHINESERVICE() {
     </section>
     
     
-    <section id="LIST">
+    <section id="LIST"  data-aos="fade-left">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
     
-            <h2> LG Customer Care Helpline Support</h2>
+            <h2  data-aos="fade-right"> LG Customer Care Helpline Support</h2>
             <ul>
            <li> <i class='fas fa-arrow-circle-right'></i>Book Your Complaints 24*7 Customer Care</li>
               <li> <i class='fas fa-arrow-circle-right'></i>Quick Service Within 2 Hours</li>
@@ -275,7 +384,7 @@ export default function LGWASHINGMACHINESERVICE() {
               <li> <i class='fas fa-arrow-circle-right'></i>Trusted Certified Technicians</li>
             </ul>
     
-            <h2>Issues In LG Washing Machine</h2>
+            <h2  data-aos="fade-left">Issues In LG Washing Machine</h2>
             <ul>
               <li> <i class='fas fa-arrow-circle-right'></i>Washing Machine On-Off Problem</li>
               <li> <i class='fas fa-arrow-circle-right'></i>Noise in The Washing Machine</li>
@@ -286,7 +395,7 @@ export default function LGWASHINGMACHINESERVICE() {
               <li> <i class='fas fa-arrow-circle-right'></i>Door Not Lock Problem</li>
             </ul>
     
-            <h2>Types Of LG Washing Machine Service</h2>
+            <h2  data-aos="fade-right">Types Of LG Washing Machine Service</h2>
             <ul>
               <li> <i class='fas fa-arrow-circle-right'></i>Top Load Washing Machine Service</li>
               <li> <i class='fas fa-arrow-circle-right'></i>Front Load Washing Machine Service</li>
@@ -299,7 +408,7 @@ export default function LGWASHINGMACHINESERVICE() {
     </section>
     
     
-    <section id="WRHY">
+    <section id="WRHY"  data-aos="fade-left">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -310,7 +419,7 @@ export default function LGWASHINGMACHINESERVICE() {
     </div>
     </div>
     </section>
-    <section id="WASHMANSIT">
+    <section id="WASHMANSIT"  data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -337,7 +446,7 @@ export default function LGWASHINGMACHINESERVICE() {
     </div>
     </div>
     </section> */}
-    <section id="STARS">
+    <section id="STARS"  data-aos="fade-left">
       <div className='container'>
         <div className='row'>
          
@@ -376,7 +485,7 @@ export default function LGWASHINGMACHINESERVICE() {
     
     
     
-    <section id="WRHY">
+    <section id="WRHY"  data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -389,7 +498,7 @@ export default function LGWASHINGMACHINESERVICE() {
     </section>
     
     
-    <section id="RATING">
+    <section id="RATING"  data-aos="fade-left">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-3 col-md-3 col-sm-12 col-12' id="borders">
@@ -508,7 +617,7 @@ export default function LGWASHINGMACHINESERVICE() {
     
     
     
-    <section id="ours">
+    <section id="ours"  data-aos="fade-right">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -521,7 +630,7 @@ export default function LGWASHINGMACHINESERVICE() {
     </div>
     </section>
     
-    <section id="DESCWASH">
+    <section id="DESCWASH"  data-aos="fade-left">
       <div className='container'>
         <div className='row'>
           <div className='col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -554,7 +663,7 @@ export default function LGWASHINGMACHINESERVICE() {
                 <div className='row'>
                   <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
                     <center>
-                    <a href='tel:+919025312399'><button>+919025312399</button></a>
+                    <a href='tel:+917770005768'><button>+917770005768</button></a>
                     </center>
                   </div>
                 </div>
@@ -564,7 +673,7 @@ export default function LGWASHINGMACHINESERVICE() {
     
     
     
-            <section id="WWO">
+            <section id="WWO"  data-aos="fade-right">
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
@@ -584,7 +693,7 @@ export default function LGWASHINGMACHINESERVICE() {
                 <div className='row'>
                   <div className='col-lg-12 colmd-12 col-sm-12 col-12'>
                     <center>
-                    <a href='tel:+919025312399'><button>+919025312399</button></a>
+                    <a href='tel:+917770005768'><button>+917770005768</button></a>
                     </center>
                   </div>
                 </div>
@@ -594,7 +703,7 @@ export default function LGWASHINGMACHINESERVICE() {
 
 
 
-<section id='BDC'>
+<section id='BDC'  data-aos="fade-right">
   <nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb">
     <li><Link to="/">Home</Link></li>
@@ -607,7 +716,7 @@ export default function LGWASHINGMACHINESERVICE() {
 
 
 
-<section id='SDS'>
+<section id='SDS'  data-aos="fade-left">
   <div className="container">
     <h2 className="sds-title">LG Washing Machine Service – Complete Details</h2>
     <div className="sds-content">
@@ -616,8 +725,8 @@ export default function LGWASHINGMACHINESERVICE() {
       <p><strong>Service Type:</strong> Top Load, Front Load, Semi-Automatic</p>
       <p><strong>Service Area:</strong> Madurai & Surrounding 20 km</p>
       <p><strong>Booking Mode:</strong> Online / Phone Call</p>
-      <p><strong>Contact Number:</strong> <a href="tel:9025312399">9025312399</a></p>
-      <p><strong>Email:</strong> <a href="mailto:e2ewebservice@gmail.com">e2ewebservice@gmail.com</a></p>
+      <p><strong>Contact Number:</strong> <a href="tel:7770005768">7770005768</a></p>
+      <p><strong>Email:</strong> <a href="mailto:expresshelplinecare@gmail.com">expresshelplinecare@gmail.com</a></p>
       <p><strong>Website:</strong> <a href="https://servicee2e.in">https://servicee2e.in</a></p>
       <p><strong>Working Hours:</strong> 9 AM – 9 PM (All Days)</p>
       <p><strong>Home Visit:</strong> Yes, Doorstep Service Available</p>
@@ -632,7 +741,7 @@ export default function LGWASHINGMACHINESERVICE() {
 
 
 
-<section id='faqs'>
+<section id='faqs'  data-aos="fade-right">
   <div className="container">
     <h2 className="faq-title">LG Washing Machine Service – FAQs</h2>
     <table className="faq-table">
@@ -691,7 +800,7 @@ export default function LGWASHINGMACHINESERVICE() {
 
 
 
-<section id='UST'>
+<section id='UST'  data-aos="fade-left">
 <div className='container'>
 <div className='row'>
 <div className='col-lg-12 col-md-12 col-12 col-sm-12'>
@@ -723,7 +832,7 @@ export default function LGWASHINGMACHINESERVICE() {
 
 
     
-    <section id="interl">
+    <section id="interl"  data-aos="fade-right">
     <div className='container'>
     <div className='row'>
       <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
@@ -753,16 +862,17 @@ export default function LGWASHINGMACHINESERVICE() {
     
     <section id="FW">
         <div className="icon-container">
-          <div className="icon facebook">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FontAwesomeIcon icon={faFacebookF} />
-            </a>
-          </div>
+        <div className="icon facebook">
+  <a
+    href="https://www.facebook.com/profile.php?id=61574399374275"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FontAwesomeIcon icon={faFacebookF} />
+  </a>
+</div>
+
           <div className="icon whatsapp">
             <a
               href="https://wa.me"
@@ -992,30 +1102,30 @@ export default function LGWASHINGMACHINESERVICE() {
     </section> */}
     
     
-      <section id="TABOFCONTENT">
+      <section id="TABOFCONTENT"  data-aos="fade-right">
       <div className='container'>
         <h2>Table of Contents</h2>
         <ul id="TAB">
-          <li><a href="#headline">1. Washing Machine Service Customer Care</a></li>
-          <li><a href="#hero">2. Hero Section</a></li>
-          <li><a href="#cchl">3. Customer Care Helpline</a></li>
-          <li><a href="#CEE">4. Contact Us</a></li>
-          <li><a href="#WRHY">5. We Are Ready to Help You</a></li>
-          <li><a href="#LIST">6. Customer Care Helpline Support</a></li>
-          <li><a href="#WASHMANSIT">7. Why Choose Us?</a></li>
-          <li><a href="#STARS">8. Customer Support Ratings</a></li>
-          <li><a href="#RATING">9. Customer Testimonials</a></li>
-          <li><a href="#ours">10. Our Service</a></li>
-          <li><a href="#DESCWASH">11. Washing Machine Customer Support Service</a></li>
-          <li><a href="#WWO">12. What We Offer</a></li>
-          <li><a href="#interl">13. Related Services</a></li>
-          <li><a href="#FW">14. Follow Us</a></li>
+          {/* <li><a href="#headline">1. Washing Machine Service Customer Care</a></li> */}
+          <li><a href="#hero">1. Hero Section</a></li>
+          <li><a href="#cchl">2. Customer Care Helpline</a></li>
+          <li><a href="#CEE">3. Contact Us</a></li>
+          <li><a href="#WRHY">4. We Are Ready to Help You</a></li>
+          <li><a href="#LIST">5. Customer Care Helpline Support</a></li>
+          <li><a href="#WASHMANSIT">6. Why Choose Us?</a></li>
+          <li><a href="#STARS">7. Customer Support Ratings</a></li>
+          <li><a href="#RATING">8. Customer Testimonials</a></li>
+          <li><a href="#ours">9. Our Service</a></li>
+          <li><a href="#DESCWASH">10. Washing Machine Customer Support Service</a></li>
+          <li><a href="#WWO">11. What We Offer</a></li>
+          <li><a href="#interl">12. Related Services</a></li>
+          <li><a href="#FW">13. Follow Us</a></li>
         </ul>
       </div>
     </section>
     
     
-    <div><Footer/></div>
+    <div><Footers/></div>
     
              </>
   )
